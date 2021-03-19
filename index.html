@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>毛毛致命/極大計算TREEEEE</title>
+	<meta name="version" content="1.0">
+	<meta property="og:title" content="毛毛致命/極大計算TREEEEE" />	
+	<meta name="description" content="就只是個計算器">
+	<meta property="og:description" content="就只是個計算器" />
+	<meta property="og:image" content="https://i.imgur.com/fFv0tZR.png" />
+	<meta property="og:image:type" content="image/png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<link rel="shortcut icon" href="icon/favicon.ico" type="image/x-icon">
+
+	<meta name="author" content="大毛">
+	<meta name="icon-asset" content="Adwaita apps">	
+
+	<link href="css/style.css" rel="stylesheet">
+	<script src="script/script.js" charset="UTF-8"> </script>	
+</head>
+
+<body class="bd">	
+	<div class="wrap">
+		<h1 class="head1">致命一擊機率</h1>
+		<p class="p">
+		<div class="input_content_right">
+			目前面板數值：
+			<div class="input_right">
+				<input type="text" id="originCRI" size="3" onChange="CalCRI()">
+			</div>
+			<br>
+			遞減增加量：
+			<div class="input_right">
+				<input type="text" id="decDelCRI" size="3" onChange="CalCRI()"> &nbsp;
+			</div>
+			<br>
+			乘算增加量：
+			<div class="input_right" onChange="CalCRI()">
+				<input type="text" id="multCRI" size="3"> &nbsp;
+			</div>
+			<br>
+			計算結果：
+			<div class="input_right">
+				<input type="text" id="resultCRI" size="3" readonly>
+			</div>
+		</div>
+		<div class="input_content_left">
+			<br>
+			非遞減增加量：
+			<div class="input_right" onChange="CalCRI()">
+				<input type="text" id="unDecDelCRI" size="3">
+			</div>
+			<br>
+			團隊效果增加量：
+			<div class="input_right" onChange="CalCRI()">
+				<input type="text" id="partyCRI" size="3">
+			</div>
+		</div>
+		</p>
+		<br>
+		<table width="500" border="1" cellpadding="5" class="tb">
+			<tbody>
+				<tr>
+					<th class="tb">遞減前百分比</th>
+					<th>遞減後百分比&nbsp;</th>
+					<th>效率&nbsp;</th>
+					<th>數值區間&nbsp;</th>
+				</tr>
+				<tr>
+					<td>0%</td>
+					<td>0%</td>
+					<td>100%</td>
+					<td>0% ~ 40%</td>
+				</tr>
+				<tr>
+					<td>40%</td>
+					<td>40%</td>
+					<td>80%</td>
+					<td>40% ~ 68%</td>
+				</tr>
+				<tr>
+					<td>75%</td>
+					<td>68%</td>
+					<td>60%</td>
+					<td>68% ~ 86%</td>
+				</tr>
+				<tr>
+					<td>105%</td>
+					<td>86%</td>
+					<td>40%</td>
+					<td>86% ~ 100%</td>
+				</tr>
+				<tr>
+					<td>140%</td>
+					<td>100%</td>
+					<td>0%</td>
+					<td>&gt;100%</td>
+				</tr>
+			</tbody>
+		</table>
+		<br>
+		<br>
+
+		<h1 class="head1">極大化</h1>
+		<p class="p">
+		<div class="input_content_right">
+			目前面板數值：
+			<div class="input_right">
+				<input type="text" id="originMAX" size="3" onChange="CalMAX()">
+			</div>
+			<br>
+			遞減增加量：
+			<div class="input_right">
+				<input type="text" id="decDelMAX" size="3" onChange="CalMAX()"> &nbsp;
+			</div>
+			<br>
+			乘算增加量：
+			<div class="input_right">
+				<input type="text" id="multMAX" size="3" onChange="CalMAX()"> &nbsp;
+			</div>
+			<br>
+			計算結果：
+			<div class="input_right">
+				<input type="text" id="resultMAX" size="3" readonly>
+			</div>
+		</div>
+		<div class="input_content_left">
+			<br>
+			非遞減增加量：
+			<div class="input_right">
+				<input type="text" id="unDecDelMAX" size="3" onChange="CalMAX()">
+			</div>
+			<br>
+			團隊效果增加量：
+			<div class="input_right">
+				<input type="text" id="partyMAX" size="3" onChange="CalMAX()">
+			</div>
+		</div>
+		</p>
+		<br>
+		<table width="500" border="1" cellpadding="5" class="tb">
+			<tbody>
+				<tr>
+					<th>遞減前百分比</th>
+					<th>遞減後百分比</th>
+					<th>效率</th>
+					<th>數值區間</th>
+				</tr>
+				<tr>
+					<td>0%</td>
+					<td>0%</td>
+					<td>100%</td>
+					<td>0% ~ 40%</td>
+				</tr>
+				<tr>
+					<td>40%</td>
+					<td>40%</td>
+					<td>75%</td>
+					<td>40% ~ 70%</td>
+				</tr>
+				<tr>
+					<td>80%</td>
+					<td>70%</td>
+					<td>50%</td>
+					<td>70% ~ 90%</td>
+				</tr>
+				<tr>
+					<td>120%</td>
+					<td>90%</td>
+					<td>25%</td>
+					<td>90% ~ 100%</td>
+				</tr>
+				<tr>
+					<td>160%</td>
+					<td>100%</td>
+					<td>0%</td>
+					<td>&gt;100%</td>
+				</tr>
+			</tbody>
+		</table>
+		<br>
+		<br>
+	</div>
+	<div class="tips">
+		<div class="tips_header">
+			<h1 class="head1">使用教學</h1>
+		</div>
+		<p class="tip">
+		<ul class="tips_list">
+			<li>填入角色目前面板上的數值</li>
+			<li>將預計增加的數值依照<br>
+				遞減／非遞減／乘算分別填入</li>
+			<li>將會獲得的團隊效果填入（％）<br>
+				虹霓裝下鞋的加成也填在這格</li>
+			<li>將剩餘的空格填入零</li>
+			<li>獲得你目前的致命／極大數值</li>
+		</ul>
+		</p>
+	</div>
+</body>
+
+</html>
