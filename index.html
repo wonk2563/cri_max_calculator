@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>毛毛致命/極大計算TREEEEE</title>
-	<meta name="version" content="1.0">
+	<meta name="version" content="1.1.0">
 	<meta property="og:title" content="毛毛致命/極大計算TREEEEE" />
 	<meta name="description" content="就只是個計算器">
 	<meta property="og:description" content="就只是個計算器" />
@@ -13,20 +13,22 @@
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
 	<link rel="shortcut icon" href="icon/favicon.ico" type="image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
 
 	<meta name="author" content="大毛">
-	<meta name="icon-asset" content="Adwaita apps">
+	<meta name="icon-asset" content="by Gnome">
 
 	<link href="css/style.css" rel="stylesheet">
-	<script src="script/script.js" charset="UTF-8"> </script>
+	<script src="script/calculation.js" charset="UTF-8"> </script>	
+	<script src="script/slider.js" charset="UTF-8"> </script>		
 	
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-EDHB2K9TKC"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag() { dataLayer.push(arguments); }
 		gtag('js', new Date());
-		gtag('config', 'G-EDHB2K9TKC');
-	</script>
+		gtag('config', 'G-EDHB2K9TKC');		
+	</script>	
 </head>
 
 <body class="bd">
@@ -36,7 +38,7 @@
 		<div class="input_content_right">
 			目前面板數值：
 			<div class="input_right">
-				<input type="text" id="originCRI" size="3" onChange="CalCRI()">
+				<input type="text" id="originCRI" size="3" onChange="CalCRI()" value="0">
 			</div>
 			<br>
 			遞減增加量：
@@ -51,10 +53,13 @@
 			<br>
 			計算結果：
 			<div class="input_right">
-				<input type="text" id="resultCRI" size="3" readonly>
+				<input type="text" id="resultCRI" size="3" value="NaN" readonly>
 			</div>
 		</div>
 		<div class="input_content_left">
+			<input type="button" class="img_btn" style="background-image:url('img/list_remove_icon.png');" onClick="Dec_CRIslider(),CalCRI()">
+			<input type="range" class="range" id="CRI_slider" max="100" min="0" step="0.1" value="0" oninput="Change_CRIvalue(),CalCRI()">
+			<input type="button" class="img_btn" style="background-image:url('img/list_add_icon.png');" onClick="Add_CRIslider(),CalCRI()">
 			<br>
 			非遞減增加量：
 			<div class="input_right" onChange="CalCRI()">
@@ -116,7 +121,7 @@
 		<div class="input_content_right">
 			目前面板數值：
 			<div class="input_right">
-				<input type="text" id="originMAX" size="3" onChange="CalMAX()">
+				<input type="text" id="originMAX" size="3" onChange="CalMAX()" value="0">
 			</div>
 			<br>
 			遞減增加量：
@@ -131,10 +136,13 @@
 			<br>
 			計算結果：
 			<div class="input_right">
-				<input type="text" id="resultMAX" size="3" readonly>
+				<input type="text" id="resultMAX" size="3" value="NaN" readonly>
 			</div>
 		</div>
 		<div class="input_content_left">
+			<input type="button" class="img_btn" style="background-image:url('img/list_remove_icon.png');" onClick="Dec_MAXslider(),CalMAX()">
+			<input type="range" class="range" id="MAX_slider" max="100" min="0" step="0.1" value="0" oninput="Change_MAXvalue(),CalMAX()">
+			<input type="button" class="img_btn" style="background-image:url('img/list_add_icon.png');" onClick="Add_MAXslider(),CalMAX()">
 			<br>
 			非遞減增加量：
 			<div class="input_right">
