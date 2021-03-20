@@ -14,7 +14,7 @@ function CalCRI() {
 
 	var result = CRI_CaldecDel(CRI_Pushback(originCRI) + decDelCRI) * multCRI * partyCRI + unDecDelCRI;
 
-	document.getElementById("resultCRI").value = result.toFixed(3);
+	document.getElementById("resultCRI").value = result.toFixed(2);
 }
 
 function CalMAX() {
@@ -26,7 +26,7 @@ function CalMAX() {
 
 	var result = MAX_CaldecDel(MAX_Pushback(originMAX) + decDelMAX) * multMAX * partyMAX + unDecDelMAX;
 
-	document.getElementById("resultMAX").value = result.toFixed(3);
+	document.getElementById("resultMAX").value = result.toFixed(2);
 }
 
 function CRI_Pushback(origin) {

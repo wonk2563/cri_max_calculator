@@ -7,11 +7,17 @@ function Change_MAXvalue(){
 }
 
 function Change_CRIslidervalue(){
-	document.getElementById("CRI_slider").value = parseFloat(document.getElementById("originCRI").value);
+	var origin = document.getElementById("originCRI").value;
+	if(origin == "")
+		origin = 0;
+	document.getElementById("CRI_slider").value = parseFloat(origin);
 }
 
 function Change_MAXslidervalue(){
-	document.getElementById("MAX_slider").value = parseFloat(document.getElementById("originMAX").value);
+	var origin = document.getElementById("originMAX").value;
+	if(origin == "")
+		origin = 0;
+	document.getElementById("MAX_slider").value = parseFloat(origin);
 }
 
 
